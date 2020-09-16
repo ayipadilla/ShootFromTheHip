@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E81AD87115761ECBF651D39 /* Pods_ShootFromTheHip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 626FB98E94E9C4C335ECA6BD /* Pods_ShootFromTheHip.framework */; };
 		F3E3547C251246FF00FFBCA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E3547B251246FF00FFBCA7 /* AppDelegate.swift */; };
 		F3E3547E251246FF00FFBCA7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E3547D251246FF00FFBCA7 /* SceneDelegate.swift */; };
 		F3E35480251246FF00FFBCA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E3547F251246FF00FFBCA7 /* ViewController.swift */; };
@@ -35,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		626FB98E94E9C4C335ECA6BD /* Pods_ShootFromTheHip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShootFromTheHip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		717FD85C58AF7E55937637DB /* Pods-ShootFromTheHip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShootFromTheHip.release.xcconfig"; path = "Target Support Files/Pods-ShootFromTheHip/Pods-ShootFromTheHip.release.xcconfig"; sourceTree = "<group>"; };
+		D0F438103A582B2AB8AA1528 /* Pods-ShootFromTheHip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShootFromTheHip.debug.xcconfig"; path = "Target Support Files/Pods-ShootFromTheHip/Pods-ShootFromTheHip.debug.xcconfig"; sourceTree = "<group>"; };
 		F3E35478251246FF00FFBCA7 /* ShootFromTheHip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShootFromTheHip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3E3547B251246FF00FFBCA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3E3547D251246FF00FFBCA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E81AD87115761ECBF651D39 /* Pods_ShootFromTheHip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +81,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F2BF0AFE244CA023DA8FDC7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D0F438103A582B2AB8AA1528 /* Pods-ShootFromTheHip.debug.xcconfig */,
+				717FD85C58AF7E55937637DB /* Pods-ShootFromTheHip.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		40DAF4971782CCA5C9EF7CFD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				626FB98E94E9C4C335ECA6BD /* Pods_ShootFromTheHip.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F3E3546F251246FF00FFBCA7 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +106,8 @@
 				F3E354912512470200FFBCA7 /* ShootFromTheHipTests */,
 				F3E3549C2512470300FFBCA7 /* ShootFromTheHipUITests */,
 				F3E35479251246FF00FFBCA7 /* Products */,
+				0F2BF0AFE244CA023DA8FDC7 /* Pods */,
+				40DAF4971782CCA5C9EF7CFD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,9 +160,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F3E354A22512470300FFBCA7 /* Build configuration list for PBXNativeTarget "ShootFromTheHip" */;
 			buildPhases = (
+				F2775D47BB1F88660CFA9165 /* [CP] Check Pods Manifest.lock */,
 				F3E35474251246FF00FFBCA7 /* Sources */,
 				F3E35475251246FF00FFBCA7 /* Frameworks */,
 				F3E35476251246FF00FFBCA7 /* Resources */,
+				8503379D23C63EE00ED3C3F7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,6 +280,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8503379D23C63EE00ED3C3F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShootFromTheHip/Pods-ShootFromTheHip-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShootFromTheHip/Pods-ShootFromTheHip-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShootFromTheHip/Pods-ShootFromTheHip-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2775D47BB1F88660CFA9165 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ShootFromTheHip-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F3E35474251246FF00FFBCA7 /* Sources */ = {
@@ -432,6 +501,7 @@
 		};
 		F3E354A32512470300FFBCA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0F438103A582B2AB8AA1528 /* Pods-ShootFromTheHip.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -450,6 +520,7 @@
 		};
 		F3E354A42512470300FFBCA7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 717FD85C58AF7E55937637DB /* Pods-ShootFromTheHip.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
