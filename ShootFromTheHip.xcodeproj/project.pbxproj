@@ -23,6 +23,8 @@
 		F32CFCA4253620D60042CBB0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32CFCA3253620D60042CBB0 /* User.swift */; };
 		F32CFCA9253621720042CBB0 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32CFCA8253621720042CBB0 /* Topic.swift */; };
 		F32CFCAE253622200042CBB0 /* ProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32CFCAD253622200042CBB0 /* ProfileImage.swift */; };
+		F32CFCB3253622F30042CBB0 /* UnsplashAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32CFCB2253622F30042CBB0 /* UnsplashAPI.swift */; };
+		F32CFCB8253623380042CBB0 /* PhotosFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32CFCB7253623380042CBB0 /* PhotosFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		F32CFCA3253620D60042CBB0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F32CFCA8253621720042CBB0 /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		F32CFCAD253622200042CBB0 /* ProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImage.swift; sourceTree = "<group>"; };
+		F32CFCB2253622F30042CBB0 /* UnsplashAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAPI.swift; sourceTree = "<group>"; };
+		F32CFCB7253623380042CBB0 /* PhotosFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosFetcher.swift; sourceTree = "<group>"; };
 		F33D602E3221F721115C31D7 /* Pods-ShootFromTheHip-ShootFromTheHipUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShootFromTheHip-ShootFromTheHipUITests.release.xcconfig"; path = "Target Support Files/Pods-ShootFromTheHip-ShootFromTheHipUITests/Pods-ShootFromTheHip-ShootFromTheHipUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -185,6 +189,8 @@
 		F32CFC97253501CC0042CBB0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F32CFCB2253622F30042CBB0 /* UnsplashAPI.swift */,
+				F32CFCB7253623380042CBB0 /* PhotosFetcher.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -402,8 +408,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F32CFC99253503F50042CBB0 /* Photo.swift in Sources */,
+				F32CFCB3253622F30042CBB0 /* UnsplashAPI.swift in Sources */,
 				F32CFCAE253622200042CBB0 /* ProfileImage.swift in Sources */,
 				F329CD472534F97D00060E0B /* ViewController.swift in Sources */,
+				F32CFCB8253623380042CBB0 /* PhotosFetcher.swift in Sources */,
 				F32CFCA4253620D60042CBB0 /* User.swift in Sources */,
 				F329CD432534F97D00060E0B /* AppDelegate.swift in Sources */,
 				F32CFC9F253504630042CBB0 /* PhotoImage.swift in Sources */,

@@ -8,7 +8,7 @@
 import Foundation
 
 struct Photo: Decodable {
-  let id: Int
+  let id: String
   let width: Int
   let height: Int
   let color: String?
@@ -25,5 +25,4 @@ struct Photo: Decodable {
     case image = "urls"
     case user
   }
-  
 }

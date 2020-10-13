@@ -11,8 +11,11 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
     title = "Shoot from the Hip"
+    
+    PhotosFetcher().fetchPhotos { (photos, error) in
+      print("Fetched photos")
+    }
   }
   
   
