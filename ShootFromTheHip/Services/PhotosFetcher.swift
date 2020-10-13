@@ -78,7 +78,7 @@ class PhotosFetcher: PhotosFetchable {
     components.path = "/photos"
     
     components.queryItems = [
-      URLQueryItem(name: "order_by", value: "popular"),
+      URLQueryItem(name: "order_by", value: "latest"),
       URLQueryItem(name: "page", value: String(page)),
       URLQueryItem(name: "per_page", value: String(pageSize))
     ]

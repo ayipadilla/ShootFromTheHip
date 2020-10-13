@@ -11,6 +11,7 @@ import Combine
 class PhotosStreamViewController: UIViewController {
   
   @IBOutlet private weak var tableView: UITableView!
+  private var refreshControl = UIRefreshControl()
   
   private let viewModel: PhotosStreamViewModel = PhotosStreamViewModel()
   private var subscriptions: Set<AnyCancellable> = []
@@ -28,15 +29,25 @@ class PhotosStreamViewController: UIViewController {
     tableView.delegate = self
     tableView.dataSource = self
     tableView.register(UINib(nibName: PhotosStreamCell.cellIdentifier, bundle: nil), forCellReuseIdentifier: PhotosStreamCell.cellIdentifier)
+    
+    refreshControl.addTarget(self, action: #selector(refreshPhotosStream(_:)), for: .valueChanged)
+    tableView.addSubview(refreshControl)
   }
   
   private func setupBindings() {
     viewModel.$photoStream.sink { [weak self] (_) in
       guard let self = self else { return }
       DispatchQueue.main.async {
+        if self.refreshControl.isRefreshing {
+          self.refreshControl.endRefreshing()
+        }
         self.tableView.reloadData()
       }
     }.store(in: &subscriptions)
+  }
+  
+  @objc private func refreshPhotosStream(_ sender: Any?) {
+    viewModel.refresh()
   }
 }
 
