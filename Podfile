@@ -5,6 +5,7 @@ target 'ShootFromTheHip' do
   use_frameworks!
 
   # Pods for ShootFromTheHip
+  pod 'SDWebImage', '~> 5.9'
 
   target 'ShootFromTheHipTests' do
     inherit! :search_paths
