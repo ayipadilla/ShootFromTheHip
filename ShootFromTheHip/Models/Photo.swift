@@ -14,6 +14,7 @@ struct Photo: Decodable {
   let color: String?
   let description: String?
   let image: PhotoImage
+  let user: User
   
   enum CodingKeys: String, CodingKey {
     case id
@@ -22,6 +23,7 @@ struct Photo: Decodable {
     case color
     case description
     case image = "urls"
+    case user
   }
   
 }

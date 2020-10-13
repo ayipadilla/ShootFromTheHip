@@ -20,6 +20,9 @@
 		F329CD652534F97D00060E0B /* ShootFromTheHipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F329CD642534F97D00060E0B /* ShootFromTheHipUITests.swift */; };
 		F32CFC99253503F50042CBB0 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32CFC98253503F50042CBB0 /* Photo.swift */; };
 		F32CFC9F253504630042CBB0 /* PhotoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32CFC9E253504630042CBB0 /* PhotoImage.swift */; };
+		F32CFCA4253620D60042CBB0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32CFCA3253620D60042CBB0 /* User.swift */; };
+		F32CFCA9253621720042CBB0 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32CFCA8253621720042CBB0 /* Topic.swift */; };
+		F32CFCAE253622200042CBB0 /* ProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32CFCAD253622200042CBB0 /* ProfileImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,9 @@
 		F329CD662534F97D00060E0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F32CFC98253503F50042CBB0 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		F32CFC9E253504630042CBB0 /* PhotoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoImage.swift; sourceTree = "<group>"; };
+		F32CFCA3253620D60042CBB0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F32CFCA8253621720042CBB0 /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
+		F32CFCAD253622200042CBB0 /* ProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImage.swift; sourceTree = "<group>"; };
 		F33D602E3221F721115C31D7 /* Pods-ShootFromTheHip-ShootFromTheHipUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShootFromTheHip-ShootFromTheHipUITests.release.xcconfig"; path = "Target Support Files/Pods-ShootFromTheHip-ShootFromTheHipUITests/Pods-ShootFromTheHip-ShootFromTheHipUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,6 +175,9 @@
 			children = (
 				F32CFC98253503F50042CBB0 /* Photo.swift */,
 				F32CFC9E253504630042CBB0 /* PhotoImage.swift */,
+				F32CFCAD253622200042CBB0 /* ProfileImage.swift */,
+				F32CFCA3253620D60042CBB0 /* User.swift */,
+				F32CFCA8253621720042CBB0 /* Topic.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -393,10 +402,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F32CFC99253503F50042CBB0 /* Photo.swift in Sources */,
+				F32CFCAE253622200042CBB0 /* ProfileImage.swift in Sources */,
 				F329CD472534F97D00060E0B /* ViewController.swift in Sources */,
+				F32CFCA4253620D60042CBB0 /* User.swift in Sources */,
 				F329CD432534F97D00060E0B /* AppDelegate.swift in Sources */,
 				F32CFC9F253504630042CBB0 /* PhotoImage.swift in Sources */,
 				F329CD452534F97D00060E0B /* SceneDelegate.swift in Sources */,
+				F32CFCA9253621720042CBB0 /* Topic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
