@@ -7,17 +7,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PhotosStreamViewController: UIViewController {
   
+  private let viewModel: PhotosStreamViewModel = PhotosStreamViewModel()
+
   override func viewDidLoad() {
     super.viewDidLoad()
     title = "Shoot from the Hip"
     
-    PhotosFetcher().fetchPhotos { (photos, error) in
-      print("Fetched photos")
-    }
-  }
-  
-  
+    viewModel.fetchPhotos()
+  }  
 }
 

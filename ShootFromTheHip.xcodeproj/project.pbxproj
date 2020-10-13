@@ -12,7 +12,7 @@
 		C68D3DD9A5463B24CAD7E4E8 /* Pods_ShootFromTheHip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA1932618EC0C9FA95B64E1 /* Pods_ShootFromTheHip.framework */; };
 		F329CD432534F97D00060E0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F329CD422534F97D00060E0B /* AppDelegate.swift */; };
 		F329CD452534F97D00060E0B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F329CD442534F97D00060E0B /* SceneDelegate.swift */; };
-		F329CD472534F97D00060E0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F329CD462534F97D00060E0B /* ViewController.swift */; };
+		F329CD472534F97D00060E0B /* PhotosStreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F329CD462534F97D00060E0B /* PhotosStreamViewController.swift */; };
 		F329CD4A2534F97D00060E0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F329CD482534F97D00060E0B /* Main.storyboard */; };
 		F329CD4C2534F97D00060E0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F329CD4B2534F97D00060E0B /* Assets.xcassets */; };
 		F329CD4F2534F97D00060E0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F329CD4D2534F97D00060E0B /* LaunchScreen.storyboard */; };
@@ -25,6 +25,7 @@
 		F32CFCAE253622200042CBB0 /* ProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32CFCAD253622200042CBB0 /* ProfileImage.swift */; };
 		F32CFCB3253622F30042CBB0 /* UnsplashAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32CFCB2253622F30042CBB0 /* UnsplashAPI.swift */; };
 		F32CFCB8253623380042CBB0 /* PhotosFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32CFCB7253623380042CBB0 /* PhotosFetcher.swift */; };
+		F32CFCC42536363B0042CBB0 /* PhotosStreamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32CFCC32536363B0042CBB0 /* PhotosStreamViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +57,7 @@
 		F329CD3F2534F97D00060E0B /* ShootFromTheHip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShootFromTheHip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F329CD422534F97D00060E0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F329CD442534F97D00060E0B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F329CD462534F97D00060E0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F329CD462534F97D00060E0B /* PhotosStreamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosStreamViewController.swift; sourceTree = "<group>"; };
 		F329CD492534F97D00060E0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F329CD4B2534F97D00060E0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F329CD4E2534F97D00060E0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -74,6 +75,7 @@
 		F32CFCAD253622200042CBB0 /* ProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImage.swift; sourceTree = "<group>"; };
 		F32CFCB2253622F30042CBB0 /* UnsplashAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAPI.swift; sourceTree = "<group>"; };
 		F32CFCB7253623380042CBB0 /* PhotosFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosFetcher.swift; sourceTree = "<group>"; };
+		F32CFCC32536363B0042CBB0 /* PhotosStreamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosStreamViewModel.swift; sourceTree = "<group>"; };
 		F33D602E3221F721115C31D7 /* Pods-ShootFromTheHip-ShootFromTheHipUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShootFromTheHip-ShootFromTheHipUITests.release.xcconfig"; path = "Target Support Files/Pods-ShootFromTheHip-ShootFromTheHipUITests/Pods-ShootFromTheHip-ShootFromTheHipUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,7 +147,7 @@
 			children = (
 				F329CD422534F97D00060E0B /* AppDelegate.swift */,
 				F329CD442534F97D00060E0B /* SceneDelegate.swift */,
-				F329CD462534F97D00060E0B /* ViewController.swift */,
+				F32CFCBC253635A90042CBB0 /* Views */,
 				F32CFC97253501CC0042CBB0 /* Services */,
 				F32CFC96253501AA0042CBB0 /* Models */,
 				F329CD482534F97D00060E0B /* Main.storyboard */,
@@ -193,6 +195,15 @@
 				F32CFCB7253623380042CBB0 /* PhotosFetcher.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		F32CFCBC253635A90042CBB0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F329CD462534F97D00060E0B /* PhotosStreamViewController.swift */,
+				F32CFCC32536363B0042CBB0 /* PhotosStreamViewModel.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		FCB69CCB514A31A2A72C1309 /* Frameworks */ = {
@@ -410,8 +421,9 @@
 				F32CFC99253503F50042CBB0 /* Photo.swift in Sources */,
 				F32CFCB3253622F30042CBB0 /* UnsplashAPI.swift in Sources */,
 				F32CFCAE253622200042CBB0 /* ProfileImage.swift in Sources */,
-				F329CD472534F97D00060E0B /* ViewController.swift in Sources */,
+				F329CD472534F97D00060E0B /* PhotosStreamViewController.swift in Sources */,
 				F32CFCB8253623380042CBB0 /* PhotosFetcher.swift in Sources */,
+				F32CFCC42536363B0042CBB0 /* PhotosStreamViewModel.swift in Sources */,
 				F32CFCA4253620D60042CBB0 /* User.swift in Sources */,
 				F329CD432534F97D00060E0B /* AppDelegate.swift in Sources */,
 				F32CFC9F253504630042CBB0 /* PhotoImage.swift in Sources */,
