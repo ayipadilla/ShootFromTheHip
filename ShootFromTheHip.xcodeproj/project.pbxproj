@@ -26,6 +26,8 @@
 		F32CFCB3253622F30042CBB0 /* UnsplashAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32CFCB2253622F30042CBB0 /* UnsplashAPI.swift */; };
 		F32CFCB8253623380042CBB0 /* PhotosFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32CFCB7253623380042CBB0 /* PhotosFetcher.swift */; };
 		F32CFCC42536363B0042CBB0 /* PhotosStreamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32CFCC32536363B0042CBB0 /* PhotosStreamViewModel.swift */; };
+		F32CFCCA253638950042CBB0 /* PhotosStreamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32CFCC8253638950042CBB0 /* PhotosStreamCell.swift */; };
+		F32CFCCB253638950042CBB0 /* PhotosStreamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F32CFCC9253638950042CBB0 /* PhotosStreamCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,8 @@
 		F32CFCB2253622F30042CBB0 /* UnsplashAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAPI.swift; sourceTree = "<group>"; };
 		F32CFCB7253623380042CBB0 /* PhotosFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosFetcher.swift; sourceTree = "<group>"; };
 		F32CFCC32536363B0042CBB0 /* PhotosStreamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosStreamViewModel.swift; sourceTree = "<group>"; };
+		F32CFCC8253638950042CBB0 /* PhotosStreamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosStreamCell.swift; sourceTree = "<group>"; };
+		F32CFCC9253638950042CBB0 /* PhotosStreamCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosStreamCell.xib; sourceTree = "<group>"; };
 		F33D602E3221F721115C31D7 /* Pods-ShootFromTheHip-ShootFromTheHipUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShootFromTheHip-ShootFromTheHipUITests.release.xcconfig"; path = "Target Support Files/Pods-ShootFromTheHip-ShootFromTheHipUITests/Pods-ShootFromTheHip-ShootFromTheHipUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -202,6 +206,8 @@
 			children = (
 				F329CD462534F97D00060E0B /* PhotosStreamViewController.swift */,
 				F32CFCC32536363B0042CBB0 /* PhotosStreamViewModel.swift */,
+				F32CFCC8253638950042CBB0 /* PhotosStreamCell.swift */,
+				F32CFCC9253638950042CBB0 /* PhotosStreamCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -324,6 +330,7 @@
 			files = (
 				F329CD4F2534F97D00060E0B /* LaunchScreen.storyboard in Resources */,
 				F329CD4C2534F97D00060E0B /* Assets.xcassets in Resources */,
+				F32CFCCB253638950042CBB0 /* PhotosStreamCell.xib in Resources */,
 				F329CD4A2534F97D00060E0B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,6 +435,7 @@
 				F329CD432534F97D00060E0B /* AppDelegate.swift in Sources */,
 				F32CFC9F253504630042CBB0 /* PhotoImage.swift in Sources */,
 				F329CD452534F97D00060E0B /* SceneDelegate.swift in Sources */,
+				F32CFCCA253638950042CBB0 /* PhotosStreamCell.swift in Sources */,
 				F32CFCA9253621720042CBB0 /* Topic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

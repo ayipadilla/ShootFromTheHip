@@ -44,6 +44,9 @@
                     <navigationItem key="navigationItem" id="wxn-W4-oee">
                         <barButtonItem key="leftBarButtonItem" systemItem="camera" id="CLX-WL-rcd"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="B3E-bu-ie2" id="9TW-6t-xJr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
