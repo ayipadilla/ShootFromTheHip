@@ -8,7 +8,7 @@
 import Foundation
 
 protocol PhotosFetchable {
-  func fetchPhotos(completion: @escaping ([Photo]?, Error?) -> Void)
+  func fetchPhotos(page: Int, pageSize: Int, completion: @escaping ([Photo]?, Int?, Error?) -> Void)
 }
 
 enum PhotosFetcherError: Error {
@@ -32,20 +32,22 @@ class PhotosFetcher: PhotosFetchable {
   private let defaultSession = URLSession(configuration: .default)
   private var dataTask: URLSessionDataTask?
   
-  func fetchPhotos(completion: @escaping ([Photo]?, Error?) -> Void) {
+  static let pageSize = 10
+
+  func fetchPhotos(page: Int = 1, pageSize: Int = pageSize, completion: @escaping ([Photo]?, Int?, Error?) -> Void) {
     dataTask?.cancel()
-    let URLComponents = getURLComponents()
+    let URLComponents = getURLComponents(page: page, pageSize: pageSize)
     guard let url = URLComponents.url else {
-      completion(nil, PhotosFetcherError.invalidURL)
+      completion(nil, nil, PhotosFetcherError.invalidURL)
       return
     }
     
-    let request = getURLLrequest(url)
+    let request = getURLRequest(url)
     
     dataTask = defaultSession.dataTask(with: request, completionHandler: { (data, response, error) in
       guard let dataResponse = data else {
         if let error = error {
-          completion(nil, PhotosFetcherError.request(error))
+          completion(nil, nil, PhotosFetcherError.request(error))
         }
         return
       }
@@ -53,15 +55,15 @@ class PhotosFetcher: PhotosFetchable {
       do {
         let decoder = JSONDecoder()
         let photos = try decoder.decode([Photo].self, from: dataResponse)
-        completion(photos, nil)
+        completion(photos, page + 1, nil)
       } catch {
-        completion(nil, PhotosFetcherError.parsing(error))
+        completion(nil, nil, PhotosFetcherError.parsing(error))
       }
     })
     dataTask?.resume()
   }
   
-  private func getURLLrequest(_ url: URL) -> URLRequest {
+  private func getURLRequest(_ url: URL) -> URLRequest {
     var request = URLRequest(url: url)
     let authorization = UnsplashAPI.authorizationPrefix + UnsplashAPI.clientID
     request.setValue(authorization , forHTTPHeaderField: UnsplashAPI.authorizationKey)
@@ -69,7 +71,7 @@ class PhotosFetcher: PhotosFetchable {
     return request
   }
   
-  private func getURLComponents() -> URLComponents {
+  private func getURLComponents(page:Int, pageSize: Int) -> URLComponents {
     var components = URLComponents()
     components.scheme = UnsplashAPI.scheme
     components.host = UnsplashAPI.host
@@ -77,6 +79,8 @@ class PhotosFetcher: PhotosFetchable {
     
     components.queryItems = [
       URLQueryItem(name: "order_by", value: "popular"),
+      URLQueryItem(name: "page", value: String(page)),
+      URLQueryItem(name: "per_page", value: String(pageSize))
     ]
     
     return components

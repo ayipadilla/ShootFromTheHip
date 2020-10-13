@@ -21,14 +21,13 @@ class PhotosStreamViewController: UIViewController {
     
     setupViews()
     setupBindings()
-    viewModel.fetchPhotos()
+    viewModel.refresh()
   }
   
   private func setupViews() {
     tableView.delegate = self
     tableView.dataSource = self
     tableView.register(UINib(nibName: PhotosStreamCell.cellIdentifier, bundle: nil), forCellReuseIdentifier: PhotosStreamCell.cellIdentifier)
-    tableView.reloadData()
   }
   
   private func setupBindings() {
@@ -68,5 +67,11 @@ extension PhotosStreamViewController: UITableViewDataSource {
 }
 
 extension PhotosStreamViewController: UITableViewDelegate {
-  
+  func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    // Fetch more items when last cell is about to be displayed
+    let index = indexPath.row
+    if index == viewModel.photoStream.count - 1 {
+      viewModel.fetchPhotos()
+    }
+  }
 }

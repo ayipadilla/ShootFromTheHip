@@ -10,21 +10,30 @@ import Combine
 
 class PhotosStreamViewModel {
   private let photosFetcher: PhotosFetchable
-  
+  private var page = 1
+  private var pageSize = 10
+
   @Published var photoStream: [PhotoStreamCellData] = []
   
   init(photosFetcher: PhotosFetchable = PhotosFetcher()) {
     self.photosFetcher = photosFetcher
   }
   
+  func refresh() {
+    page = 1
+    fetchPhotos()
+  }
+  
   func fetchPhotos() {
-    photosFetcher.fetchPhotos { [weak self] (photosResponse, error) in
+    photosFetcher.fetchPhotos(page: page, pageSize: pageSize) { [weak self] (photosResponse, nextPage, error) in
       guard let self = self, error == nil,
-            let photos = photosResponse
+            let photos = photosResponse,
+            let nextPage = nextPage
       else { return }
-      
+
+      self.page = nextPage
       let photosData = photos.map { (photo) -> PhotoStreamCellData in
-        let imageURL = URL(string: photo.image.full)
+        let imageURL = URL(string: photo.image.small)
         let heightWidthRatio = Double(photo.width) / Double(photo.height)
         return PhotoStreamCellData(
           heading: photo.id,
@@ -33,7 +42,12 @@ class PhotosStreamViewModel {
         )
       }
       guard !photosData.isEmpty else { return }
-      self.photoStream.append(contentsOf: photosData)
+      
+      if self.page == 1 {
+        self.photoStream = photosData
+      } else {
+        self.photoStream.append(contentsOf: photosData)
+      }
     }
   }
 }
