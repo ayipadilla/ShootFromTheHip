@@ -35,12 +35,67 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="camera" id="CLX-WL-rcd"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="infoButton" destination="CLX-WL-rcd" id="2u1-HV-Y0Z"/>
                         <outlet property="tableView" destination="B3E-bu-ie2" id="9TW-6t-xJr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1049" y="90"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="YCa-uW-9le">
+            <objects>
+                <viewController storyboardIdentifier="AboutViewController" id="d5M-rf-PoV" customClass="AboutViewController" customModule="ShootFromTheHip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0XP-Ci-gDd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSI-BM-71T">
+                                <rect key="frame" x="355" y="44" width="43" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="kOR-0b-Znb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Close"/>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9GH-Bk-xRj">
+                                <rect key="frame" x="16" y="88" width="382" height="69.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shoot from the Hip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BcT-vj-u6F">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="41"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo Viewer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gu-mg-0pB">
+                                        <rect key="frame" x="0.0" y="49" width="382" height="20.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wfP-A1-KnK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HSI-BM-71T" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wfP-A1-KnK" secondAttribute="leading" symbolic="YES" id="FFQ-Ic-5To"/>
+                            <constraint firstItem="HSI-BM-71T" firstAttribute="top" secondItem="wfP-A1-KnK" secondAttribute="top" id="Ljm-Hk-Yqk"/>
+                            <constraint firstItem="9GH-Bk-xRj" firstAttribute="leading" secondItem="wfP-A1-KnK" secondAttribute="leading" constant="16" id="M3m-aR-ASb"/>
+                            <constraint firstItem="wfP-A1-KnK" firstAttribute="trailing" secondItem="9GH-Bk-xRj" secondAttribute="trailing" constant="16" id="XRC-Pm-vqR"/>
+                            <constraint firstItem="wfP-A1-KnK" firstAttribute="trailing" secondItem="HSI-BM-71T" secondAttribute="trailing" constant="16" id="rn3-t6-LQT"/>
+                            <constraint firstItem="9GH-Bk-xRj" firstAttribute="top" secondItem="HSI-BM-71T" secondAttribute="bottom" id="uU1-sG-Bu7"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="closeButton" destination="HSI-BM-71T" id="fKt-2Y-Gnj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZfN-LE-Xvy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1048" y="817"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="t0u-hY-7Ub">

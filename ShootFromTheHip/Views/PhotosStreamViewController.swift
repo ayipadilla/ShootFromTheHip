@@ -11,6 +11,7 @@ import Combine
 class PhotosStreamViewController: UIViewController {
   
   @IBOutlet private weak var tableView: UITableView!
+  @IBOutlet private weak var infoButton: UIBarButtonItem!
   private var refreshControl = UIRefreshControl()
   
   private let viewModel: PhotosStreamViewModel = PhotosStreamViewModel()
@@ -32,6 +33,9 @@ class PhotosStreamViewController: UIViewController {
     
     refreshControl.addTarget(self, action: #selector(refreshPhotosStream(_:)), for: .valueChanged)
     tableView.addSubview(refreshControl)
+    
+    infoButton.target = self
+    infoButton.action = #selector(showAboutView(_:))
   }
   
   private func setupBindings() {
@@ -46,8 +50,14 @@ class PhotosStreamViewController: UIViewController {
     }.store(in: &subscriptions)
   }
   
-  @objc private func refreshPhotosStream(_ sender: Any?) {
+  @objc private func refreshPhotosStream(_ sender: Any) {
     viewModel.refresh()
+  }
+  
+  // MARK: Navigation
+  @objc private func showAboutView(_ sender: Any) {
+    guard let aboutViewController = storyboard?.instantiateViewController(identifier: AboutViewController.storyboardIdentifier) else { return }
+    present(aboutViewController, animated: true, completion: nil)
   }
 }
 
