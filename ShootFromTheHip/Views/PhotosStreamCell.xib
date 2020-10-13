@@ -11,28 +11,38 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotosStreamCell" id="KGk-i7-Jjw" customClass="PhotosStreamCell" customModule="ShootFromTheHip" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="230"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="230"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rx6-XW-yyO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="230"/>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L60-3b-57I">
-                        <rect key="frame" x="16" y="12" width="288" height="21"/>
+                        <rect key="frame" x="16" y="16" width="288" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="L60-3b-57I" secondAttribute="trailing" constant="16" id="FDb-1N-ktO"/>
-                    <constraint firstItem="L60-3b-57I" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="NZM-bU-7s5"/>
-                    <constraint firstItem="L60-3b-57I" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="a3S-OX-xkl"/>
+                    <constraint firstItem="rx6-XW-yyO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Pka-ys-j1n"/>
+                    <constraint firstItem="rx6-XW-yyO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="hEG-uw-BR7"/>
+                    <constraint firstAttribute="trailing" secondItem="rx6-XW-yyO" secondAttribute="trailing" id="jwX-5z-FzY"/>
+                    <constraint firstAttribute="bottom" secondItem="rx6-XW-yyO" secondAttribute="bottom" id="rco-Gx-HGb"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <constraints>
+                <constraint firstItem="njF-e1-oar" firstAttribute="trailing" secondItem="L60-3b-57I" secondAttribute="trailing" constant="16" id="0qF-8u-vkL"/>
+                <constraint firstItem="L60-3b-57I" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" constant="16" id="JMm-Zp-NTb"/>
+                <constraint firstItem="L60-3b-57I" firstAttribute="top" secondItem="njF-e1-oar" secondAttribute="top" constant="16" id="sea-9Q-ivM"/>
+            </constraints>
             <connections>
                 <outlet property="headingLabel" destination="L60-3b-57I" id="cMG-3q-XkZ"/>
+                <outlet property="photoImageView" destination="rx6-XW-yyO" id="3h4-qh-Zi1"/>
             </connections>
             <point key="canvasLocation" x="-146" y="56"/>
         </tableViewCell>

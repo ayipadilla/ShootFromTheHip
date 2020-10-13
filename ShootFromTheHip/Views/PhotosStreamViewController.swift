@@ -11,10 +11,10 @@ import Combine
 class PhotosStreamViewController: UIViewController {
   
   @IBOutlet private weak var tableView: UITableView!
-
+  
   private let viewModel: PhotosStreamViewModel = PhotosStreamViewModel()
   private var subscriptions: Set<AnyCancellable> = []
-
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     title = "Shoot from the Hip"
@@ -60,7 +60,10 @@ extension PhotosStreamViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 44.0
+    let index = indexPath.row
+    guard index < viewModel.photoStream.count else { return 0 }
+    let cellData = viewModel.photoStream[index]
+    return tableView.frame.size.width * CGFloat(cellData.heightWidthRatio)
   }
 }
 

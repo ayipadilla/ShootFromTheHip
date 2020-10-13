@@ -23,9 +23,13 @@ class PhotosStreamViewModel {
             let photos = photosResponse
       else { return }
       
-      let photosData = photos.map { (photo) in
+      let photosData = photos.map { (photo) -> PhotoStreamCellData in
+        let imageURL = URL(string: photo.image.full)
+        let heightWidthRatio = Double(photo.width) / Double(photo.height)
         return PhotoStreamCellData(
-          heading: photo.id
+          heading: photo.id,
+          imageURL: imageURL,
+          heightWidthRatio: heightWidthRatio
         )
       }
       guard !photosData.isEmpty else { return }
