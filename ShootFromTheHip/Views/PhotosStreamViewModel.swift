@@ -36,7 +36,7 @@ class PhotosStreamViewModel {
         let imageURL = URL(string: photo.image.small)
         let heightWidthRatio = Double(photo.width) / Double(photo.height)
         return PhotoStreamCellData(
-          heading: photo.id,
+          heading: photo.user.name ?? "",
           imageURL: imageURL,
           heightWidthRatio: heightWidthRatio
         )

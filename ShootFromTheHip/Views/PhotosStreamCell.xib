@@ -21,13 +21,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="230"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L60-3b-57I">
-                        <rect key="frame" x="16" y="16" width="288" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <rect key="frame" x="16" y="193.5" width="288" height="20.5"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="L60-3b-57I" secondAttribute="bottom" constant="16" id="BDk-Kz-gcm"/>
                     <constraint firstItem="rx6-XW-yyO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Pka-ys-j1n"/>
                     <constraint firstItem="rx6-XW-yyO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="hEG-uw-BR7"/>
                     <constraint firstAttribute="trailing" secondItem="rx6-XW-yyO" secondAttribute="trailing" id="jwX-5z-FzY"/>
@@ -38,7 +38,6 @@
             <constraints>
                 <constraint firstItem="njF-e1-oar" firstAttribute="trailing" secondItem="L60-3b-57I" secondAttribute="trailing" constant="16" id="0qF-8u-vkL"/>
                 <constraint firstItem="L60-3b-57I" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" constant="16" id="JMm-Zp-NTb"/>
-                <constraint firstItem="L60-3b-57I" firstAttribute="top" secondItem="njF-e1-oar" secondAttribute="top" constant="16" id="sea-9Q-ivM"/>
             </constraints>
             <connections>
                 <outlet property="headingLabel" destination="L60-3b-57I" id="cMG-3q-XkZ"/>
