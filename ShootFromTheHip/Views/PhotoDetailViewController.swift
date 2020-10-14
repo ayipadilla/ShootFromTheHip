@@ -70,7 +70,9 @@ class PhotoDetailViewController: UIViewController {
       items.append(shareFullImage)
     } else if let sharePreviewImage = previewImage {
       items.append(sharePreviewImage)
-    } else if let photoImageURL = viewModel.photoImageURL {
+    }
+    
+    if let photoImageURL = viewModel.photoImageURL {
       items.append(photoImageURL)
     }
 
