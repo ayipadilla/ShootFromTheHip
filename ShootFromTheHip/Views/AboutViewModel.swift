@@ -32,7 +32,7 @@ class AboutViewModel {
     return ""
   }
   
-  var iconCredits: String {
+  var appCredits: String {
     let icons = [
       "Ionicons https://ionicons.com/",
       "Unsplash https://unsplash.com/"

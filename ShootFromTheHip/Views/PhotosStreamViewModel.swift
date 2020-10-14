@@ -58,11 +58,12 @@ class PhotosStreamViewModel {
 
   func photoDetailView(at index: Int) -> PhotoDetailViewController? {
     guard index >= 0, index < photos.count else { return nil }
-    let photoDetailViewCOntroller = PhotoDetailViewController(nibName: "PhotoDetailViewController", bundle: nil)
+    let photoDetailViewCOntroller = PhotoDetailViewController(nibName: PhotoDetailViewController.nibName, bundle: nil)
     let cellData = photoStream[index]
-    photoDetailViewCOntroller.viewModel.previewImageURL = cellData.previewImageURL
-    photoDetailViewCOntroller.viewModel.photoImageURL = cellData.fullImageURL
-    photoDetailViewCOntroller.viewModel.heightWidthRatio = cellData.heightWidthRatio
+    let viewModel = photoDetailViewCOntroller.viewModel
+    viewModel.previewImageURL = cellData.previewImageURL
+    viewModel.photoImageURL = cellData.fullImageURL
+    viewModel.heightWidthRatio = cellData.heightWidthRatio
     return photoDetailViewCOntroller
   }
 }

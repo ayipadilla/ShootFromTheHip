@@ -41,7 +41,7 @@ class AboutViewController: UITableViewController {
   private func setupContent() {
     appNameLabel.text = viewModel.appDisplayName
     appVersionLabel.text = viewModel.appVersion
-    creditsTextView.text = viewModel.iconCredits
+    creditsTextView.text = viewModel.appCredits
     appearanceSegmentedControl.selectedSegmentIndex = 0
   }
   

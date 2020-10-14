@@ -9,10 +9,13 @@ import UIKit
 import SDWebImage
 
 class PhotoDetailViewController: UIViewController {
+  static let nibName = "PhotoDetailViewController"
+
   @IBOutlet private weak var photoImageView: UIImageView!
   @IBOutlet private weak var photoImageHeight: NSLayoutConstraint!
   @IBOutlet private weak var closeButton: UIButton!
   @IBOutlet private weak var shareButton: UIButton!
+  @IBOutlet private weak var titleLabel: UILabel!
 
   var previewImage: UIImage?
   var fullImage: UIImage?
@@ -22,6 +25,7 @@ class PhotoDetailViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupView()
+    setupContent()
     setupPhotoImageView()
   }
   
@@ -30,18 +34,24 @@ class PhotoDetailViewController: UIViewController {
     shareButton.addTarget(self, action: #selector(shareButtonTapped(_:)), for: .touchUpInside)
   }
   
-  private func setupPhotoImageView() {
-    guard let previewImageURL = viewModel.previewImageURL,
-          let fullImageURL = viewModel.photoImageURL,
-          let heightWidthRatio = viewModel.heightWidthRatio
-    else {
-      return
-    }
+  private func setupContent() {
+    titleLabel.text = viewModel.title
     
+    let heightWidthRatio = viewModel.heightWidthRatio ?? 0
     let maxHeight = UIScreen.main.bounds.height * 0.75
     let scaledHeight = UIScreen.main.bounds.width * CGFloat(heightWidthRatio)
     photoImageHeight.constant = min(maxHeight, scaledHeight)
     view.layoutIfNeeded()
+
+    
+  }
+  
+  private func setupPhotoImageView() {
+    guard let previewImageURL = viewModel.previewImageURL,
+          let fullImageURL = viewModel.photoImageURL
+    else {
+      return
+    }
 
     let manager = SDWebImageManager.shared
     let options = SDWebImageOptions(rawValue: 0)

@@ -15,6 +15,7 @@
                 <outlet property="photoImageHeight" destination="SOb-T6-tpp" id="pZL-Me-aWS"/>
                 <outlet property="photoImageView" destination="6dv-NJ-0h2" id="zjp-pl-957"/>
                 <outlet property="shareButton" destination="mJP-bc-RE3" id="0Lr-g6-0s8"/>
+                <outlet property="titleLabel" destination="71j-fd-WXX" id="uuf-D6-ghR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -30,14 +31,21 @@
                         <constraint firstAttribute="height" id="SOb-T6-tpp"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJP-bc-RE3">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJP-bc-RE3" userLabel="Share Button">
                     <rect key="frame" x="367" y="62" width="19" height="22"/>
                     <state key="normal" image="square.and.arrow.up" catalog="system"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUv-fs-pdE">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUv-fs-pdE" userLabel="Close Button">
                     <rect key="frame" x="28" y="62" width="17.5" height="22"/>
                     <state key="normal" image="xmark" catalog="system"/>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Photo by" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71j-fd-WXX">
+                    <rect key="frame" x="20" y="841" width="374" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -50,7 +58,7 @@
                 <constraint firstItem="RUv-fs-pdE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="28" id="naJ-QT-3A4"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mJP-bc-RE3" secondAttribute="trailing" constant="28" id="vjk-QK-HpI"/>
             </constraints>
-            <point key="canvasLocation" x="91" y="60"/>
+            <point key="canvasLocation" x="89.855072463768124" y="59.598214285714285"/>
         </view>
     </objects>
     <resources>
