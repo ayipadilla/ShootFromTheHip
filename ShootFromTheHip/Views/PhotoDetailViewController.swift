@@ -44,15 +44,16 @@ class PhotoDetailViewController: UIViewController {
     view.layoutIfNeeded()
 
     let manager = SDWebImageManager.shared
-    manager.loadImage(with: previewImageURL, options: .highPriority, progress: nil) { [weak self] (image, data, error, cacheType, finished, url) in
+    let options = SDWebImageOptions(rawValue: 0)
+    manager.loadImage(with: previewImageURL, options: options, progress: nil) { [weak self] (image, data, error, cacheType, finished, url) in
       guard let self = self, finished else { return }
       self.previewImage = image
-      if self.fullImage != nil {
+      if self.fullImage == nil {
         self.photoImageView.image = image
       }
     }
     
-    manager.loadImage(with: fullImageURL, options: .highPriority, progress: nil) { [weak self] (image, data, error, cacheType, finished, url) in
+    manager.loadImage(with: fullImageURL, options: options, progress: nil) { [weak self] (image, data, error, cacheType, finished, url) in
       guard let self = self, finished else { return }
       self.fullImage = image
       self.photoImageView.image = image
