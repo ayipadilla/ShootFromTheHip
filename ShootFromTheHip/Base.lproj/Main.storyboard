@@ -106,8 +106,8 @@
                                                     <rect key="frame" x="20" y="54" width="374" height="32"/>
                                                     <segments>
                                                         <segment title="Automatic"/>
-                                                        <segment title="Dark"/>
                                                         <segment title="Light"/>
+                                                        <segment title="Dark"/>
                                                     </segments>
                                                 </segmentedControl>
                                             </subviews>
@@ -171,6 +171,7 @@
                     <connections>
                         <outlet property="appNameLabel" destination="4fp-wx-Pex" id="gUV-UX-NkR"/>
                         <outlet property="appVersionLabel" destination="3Ff-aQ-n8z" id="Lyi-Tg-Hlv"/>
+                        <outlet property="appearanceSegmentedControl" destination="91T-X5-TVI" id="BE0-6U-WPY"/>
                         <outlet property="closeButton" destination="STA-AM-kef" id="Uf6-vT-xNf"/>
                         <outlet property="creditsTextView" destination="H15-n9-C9F" id="gYw-0A-MWA"/>
                     </connections>
@@ -223,10 +224,10 @@
             <color red="0.98400002717971802" green="0.48199999332427979" blue="0.41999998688697815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="PrimaryTextColor">
-            <color red="0.22745098039215686" green="0.23921568627450981" blue="0.25882352941176473" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.22699999809265137" green="0.23899999260902405" blue="0.25900000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="SecondaryTextColor">
-            <color red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.33300000429153442" green="0.33300000429153442" blue="0.33300000429153442" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

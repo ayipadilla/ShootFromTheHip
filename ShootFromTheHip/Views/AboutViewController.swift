@@ -15,7 +15,8 @@ class AboutViewController: UITableViewController {
   @IBOutlet private weak var closeButton: UIBarButtonItem!
   @IBOutlet private weak var appNameLabel: UILabel!
   @IBOutlet private weak var appVersionLabel: UILabel!
-  @IBOutlet weak var creditsTextView: UITextView!
+  @IBOutlet private weak var creditsTextView: UITextView!
+  @IBOutlet private weak var appearanceSegmentedControl: UISegmentedControl!
   
   private let viewModel = AboutViewModel()
   
@@ -31,6 +32,8 @@ class AboutViewController: UITableViewController {
     closeButton.target = self
     closeButton.action = #selector(closeView(_:))
     
+    appearanceSegmentedControl.addTarget(self, action: #selector(appearanceModeValueDidChange(_:)), for: .valueChanged)
+    
     navigationController?.navigationBar.shadowImage = UIImage()
     tableView.tableFooterView = UIView()
   }
@@ -39,16 +42,21 @@ class AboutViewController: UITableViewController {
     appNameLabel.text = viewModel.appDisplayName
     appVersionLabel.text = viewModel.appVersion
     creditsTextView.text = viewModel.iconCredits
+    appearanceSegmentedControl.selectedSegmentIndex = 0
+  }
+  
+  private func showWebView(_ URL: URL) {
+      let viewController = SFSafariViewController(url: URL)
+      viewController.modalPresentationStyle = .popover
+      present(viewController, animated: true, completion: nil)
   }
   
   @objc private func closeView(_ sender: Any) {
     dismiss(animated: true, completion: nil)
   }
   
-  func showWebView(_ URL: URL) {
-      let viewController = SFSafariViewController(url: URL)
-      viewController.modalPresentationStyle = .popover
-      present(viewController, animated: true, completion: nil)
+  @objc private func appearanceModeValueDidChange(_ sender: UISegmentedControl) {
+    viewModel.selectedAppearanceMode(sender.selectedSegmentIndex)
   }
 }
 
