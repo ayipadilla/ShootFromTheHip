@@ -95,7 +95,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="v24-uk-k2n">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="STA-AM-kef"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="STA-AM-kef"/>
                     </navigationItem>
                     <connections>
                         <outlet property="closeButton" destination="STA-AM-kef" id="Uf6-vT-xNf"/>
