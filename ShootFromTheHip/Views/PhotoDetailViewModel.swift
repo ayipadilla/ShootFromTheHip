@@ -8,6 +8,7 @@
 import Foundation
 
 class PhotoDetailViewModel {
+  var previewImageURL: URL?
   var photoImageURL: URL?
   var heightWidthRatio: Double?
 }

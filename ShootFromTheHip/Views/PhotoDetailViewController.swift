@@ -13,7 +13,9 @@ class PhotoDetailViewController: UIViewController {
   @IBOutlet private weak var photoImageHeight: NSLayoutConstraint!
   @IBOutlet private weak var closeButton: UIButton!
   @IBOutlet private weak var shareButton: UIButton!
-  var shareImage: UIImage?
+
+  var previewImage: UIImage?
+  var fullImage: UIImage?
 
   let viewModel: PhotoDetailViewModel = PhotoDetailViewModel()
 
@@ -29,14 +31,32 @@ class PhotoDetailViewController: UIViewController {
   }
   
   private func setupPhotoImageView() {
-    guard let photoImageUrl = viewModel.photoImageURL,
-          let heightWidthRatio = viewModel.heightWidthRatio else { return }
-    photoImageHeight.constant = UIScreen.main.bounds.width * CGFloat(heightWidthRatio)
-    photoImageView.sd_setImage(with: photoImageUrl) { [weak self] (image, error, cacheType, url) in
-      guard let self = self else { return }
-      self.shareImage = image
+    guard let previewImageURL = viewModel.previewImageURL,
+          let fullImageURL = viewModel.photoImageURL,
+          let heightWidthRatio = viewModel.heightWidthRatio
+    else {
+      return
     }
+    
+    let maxHeight = UIScreen.main.bounds.height * 0.75
+    let scaledHeight = UIScreen.main.bounds.width * CGFloat(heightWidthRatio)
+    photoImageHeight.constant = min(maxHeight, scaledHeight)
     view.layoutIfNeeded()
+
+    let manager = SDWebImageManager.shared
+    manager.loadImage(with: previewImageURL, options: .highPriority, progress: nil) { [weak self] (image, data, error, cacheType, finished, url) in
+      guard let self = self, finished else { return }
+      self.previewImage = image
+      if self.fullImage != nil {
+        self.photoImageView.image = image
+      }
+    }
+    
+    manager.loadImage(with: fullImageURL, options: .highPriority, progress: nil) { [weak self] (image, data, error, cacheType, finished, url) in
+      guard let self = self, finished else { return }
+      self.fullImage = image
+      self.photoImageView.image = image
+    }
   }
   
   @objc private func closeButtonTapped(_ sender: Any) {
@@ -45,11 +65,14 @@ class PhotoDetailViewController: UIViewController {
   
   @objc private func shareButtonTapped(_ sender: Any) {
     var items: [Any] = []
-    if let photoImage = shareImage {
-      items.append(photoImage)
+    if let shareFullImage = fullImage {
+      items.append(shareFullImage)
+    } else if let sharePreviewImage = previewImage {
+      items.append(sharePreviewImage)
     } else if let photoImageURL = viewModel.photoImageURL {
       items.append(photoImageURL)
     }
+
     guard !items.isEmpty else { return }
     let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: nil)
     present(activityViewController, animated: true)

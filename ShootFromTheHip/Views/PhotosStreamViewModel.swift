@@ -34,12 +34,12 @@ class PhotosStreamViewModel {
 
       self.page = nextPage
       let photosData = photos.map { (photo) -> PhotoStreamData in
-        let smallImageURL = URL(string: photo.image.small)
-        let fullImageURL = URL(string: photo.image.full)
-        let heightWidthRatio = Double(photo.width) / Double(photo.height)
+        let previewImageURL = URL(string: photo.image.regular)
+        let fullImageURL = URL(string: photo.image.raw)
+        let heightWidthRatio = Double(photo.height) / Double(photo.width)
         return PhotoStreamData(
           heading: photo.user.name ?? "",
-          smallImageURL: smallImageURL,
+          previewImageURL: previewImageURL,
           fullImageURL: fullImageURL,
           heightWidthRatio: heightWidthRatio
         )
@@ -60,6 +60,7 @@ class PhotosStreamViewModel {
     guard index >= 0, index < photos.count else { return nil }
     let photoDetailViewCOntroller = PhotoDetailViewController(nibName: "PhotoDetailViewController", bundle: nil)
     let cellData = photoStream[index]
+    photoDetailViewCOntroller.viewModel.previewImageURL = cellData.previewImageURL
     photoDetailViewCOntroller.viewModel.photoImageURL = cellData.fullImageURL
     photoDetailViewCOntroller.viewModel.heightWidthRatio = cellData.heightWidthRatio
     return photoDetailViewCOntroller

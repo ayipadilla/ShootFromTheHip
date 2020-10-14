@@ -24,6 +24,6 @@ class PhotosStreamCell: UITableViewCell {
   
   func configure(_ cellData: PhotoStreamData) {
     headingLabel.text = cellData.heading
-    photoImageView.sd_setImage(with: cellData.smallImageURL, completed: nil)
+    photoImageView.sd_setImage(with: cellData.previewImageURL, completed: nil)
   }
 }

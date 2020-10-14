@@ -9,7 +9,7 @@ import Foundation
 
 struct PhotoStreamData {
   let heading: String
-  let smallImageURL: URL?
+  let previewImageURL: URL?
   let fullImageURL: URL?
   let heightWidthRatio: Double
 }
