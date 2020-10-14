@@ -14,6 +14,7 @@
                 <outlet property="closeButton" destination="RUv-fs-pdE" id="FYU-ez-YRq"/>
                 <outlet property="photoImageHeight" destination="SOb-T6-tpp" id="pZL-Me-aWS"/>
                 <outlet property="photoImageView" destination="6dv-NJ-0h2" id="zjp-pl-957"/>
+                <outlet property="shareButton" destination="mJP-bc-RE3" id="0Lr-g6-0s8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -29,24 +30,31 @@
                         <constraint firstAttribute="height" id="SOb-T6-tpp"/>
                     </constraints>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJP-bc-RE3">
+                    <rect key="frame" x="367" y="62" width="19" height="22"/>
+                    <state key="normal" image="square.and.arrow.up" catalog="system"/>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUv-fs-pdE">
-                    <rect key="frame" x="28" y="62" width="18" height="22"/>
+                    <rect key="frame" x="28" y="62" width="17.5" height="22"/>
                     <state key="normal" image="xmark" catalog="system"/>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="mJP-bc-RE3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="18" id="GuT-Dx-06i"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6dv-NJ-0h2" secondAttribute="trailing" id="Hro-0G-8Jq"/>
                 <constraint firstItem="RUv-fs-pdE" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="18" id="NpC-di-yMq"/>
-                <constraint firstItem="RUv-fs-pdE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="28" id="Uky-6M-vWT"/>
                 <constraint firstItem="6dv-NJ-0h2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Xo3-qT-SuU"/>
                 <constraint firstItem="6dv-NJ-0h2" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="fnA-Hb-44C"/>
+                <constraint firstItem="RUv-fs-pdE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="28" id="naJ-QT-3A4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mJP-bc-RE3" secondAttribute="trailing" constant="28" id="vjk-QK-HpI"/>
             </constraints>
             <point key="canvasLocation" x="91" y="60"/>
         </view>
     </objects>
     <resources>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="secondarySystemFillColor">
             <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
