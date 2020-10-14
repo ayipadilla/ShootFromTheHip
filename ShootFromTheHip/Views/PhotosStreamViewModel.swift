@@ -13,7 +13,7 @@ class PhotosStreamViewModel {
   private var page = 1
   private var pageSize = 10
 
-  @Published var photoStream: [PhotoStreamCellData] = []
+  @Published var photoStream: [PhotoStreamData] = []
   private var photos: [Photo] = []
 
   init(photosFetcher: PhotosFetchable = PhotosFetcher()) {
@@ -33,12 +33,14 @@ class PhotosStreamViewModel {
       else { return }
 
       self.page = nextPage
-      let photosData = photos.map { (photo) -> PhotoStreamCellData in
-        let imageURL = URL(string: photo.image.small)
+      let photosData = photos.map { (photo) -> PhotoStreamData in
+        let smallImageURL = URL(string: photo.image.small)
+        let fullImageURL = URL(string: photo.image.full)
         let heightWidthRatio = Double(photo.width) / Double(photo.height)
-        return PhotoStreamCellData(
+        return PhotoStreamData(
           heading: photo.user.name ?? "",
-          imageURL: imageURL,
+          smallImageURL: smallImageURL,
+          fullImageURL: fullImageURL,
           heightWidthRatio: heightWidthRatio
         )
       }
@@ -58,7 +60,7 @@ class PhotosStreamViewModel {
     guard index >= 0, index < photos.count else { return nil }
     let photoDetailViewCOntroller = PhotoDetailViewController(nibName: "PhotoDetailViewController", bundle: nil)
     let cellData = photoStream[index]
-    photoDetailViewCOntroller.viewModel.photoImageURL = cellData.imageURL
+    photoDetailViewCOntroller.viewModel.photoImageURL = cellData.fullImageURL
     photoDetailViewCOntroller.viewModel.heightWidthRatio = cellData.heightWidthRatio
     return photoDetailViewCOntroller
   }

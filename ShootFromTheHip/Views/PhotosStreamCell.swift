@@ -8,12 +8,6 @@
 import UIKit
 import SDWebImage
 
-struct PhotoStreamCellData {
-  let heading: String
-  let imageURL: URL?
-  let heightWidthRatio: Double
-}
-
 class PhotosStreamCell: UITableViewCell {
   static let cellIdentifier = "PhotosStreamCell"
   
@@ -28,9 +22,8 @@ class PhotosStreamCell: UITableViewCell {
     super.setSelected(selected, animated: animated)
   }
   
-  func configure(_ cellData: PhotoStreamCellData) {
+  func configure(_ cellData: PhotoStreamData) {
     headingLabel.text = cellData.heading
-    photoImageView.sd_setImage(with: cellData.imageURL, completed: nil)
+    photoImageView.sd_setImage(with: cellData.smallImageURL, completed: nil)
   }
-  
 }
