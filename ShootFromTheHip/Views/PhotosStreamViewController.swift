@@ -55,7 +55,7 @@ class PhotosStreamViewController: UITableViewController {
   
   // MARK: Navigation
   @objc private func showAboutView(_ sender: Any) {
-    guard let aboutViewController = storyboard?.instantiateViewController(identifier: AboutViewController.storyboardIdentifier) else { return }
+    guard let aboutViewController = storyboard?.instantiateViewController(identifier:AboutViewController.navControllerStoryboardIdentifier) else { return }
     present(aboutViewController, animated: true, completion: nil)
   }
   

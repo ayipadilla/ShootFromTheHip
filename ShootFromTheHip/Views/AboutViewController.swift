@@ -7,15 +7,23 @@
 
 import UIKit
 
-class AboutViewController: UIViewController {
+class AboutViewController: UITableViewController {
   static let storyboardIdentifier = "AboutViewController"
+  static let navControllerStoryboardIdentifier = "AboutNavigationController"
   
-  @IBOutlet private weak var closeButton: UIButton!
+  @IBOutlet private weak var closeButton: UIBarButtonItem!
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    setupView()
+  }
+  
+  private func setupView() {
+    closeButton.target = self
+    closeButton.action = #selector(closeView(_:))
     
-    closeButton.addTarget(self, action: #selector(closeView(_:)), for: .touchUpInside)
+    navigationController?.navigationBar.shadowImage = UIImage()
+    tableView.tableFooterView = UIView()
   }
   
   @objc private func closeView(_ sender: Any) {
