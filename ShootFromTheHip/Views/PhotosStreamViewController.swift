@@ -59,6 +59,11 @@ class PhotosStreamViewController: UIViewController {
     guard let aboutViewController = storyboard?.instantiateViewController(identifier: AboutViewController.storyboardIdentifier) else { return }
     present(aboutViewController, animated: true, completion: nil)
   }
+  
+  private func showPhotoDetailView(at index: Int) {
+    guard let photoDetailViewController = viewModel.photoDetailView(at: index) else { return }
+    present(photoDetailViewController, animated: true, completion: nil)
+  }
 }
 
 extension PhotosStreamViewController: UITableViewDataSource {
@@ -94,5 +99,9 @@ extension PhotosStreamViewController: UITableViewDelegate {
     if index == viewModel.photoStream.count - 1 {
       viewModel.fetchPhotos()
     }
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    showPhotoDetailView(at: indexPath.row)
   }
 }
