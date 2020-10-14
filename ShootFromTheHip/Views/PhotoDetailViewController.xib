@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotoDetailViewController" customModule="ShootFromTheHip" customModuleProvider="target">
             <connections>
+                <outlet property="closeButton" destination="RUv-fs-pdE" id="FYU-ez-YRq"/>
                 <outlet property="photoImageHeight" destination="SOb-T6-tpp" id="pZL-Me-aWS"/>
                 <outlet property="photoImageView" destination="6dv-NJ-0h2" id="zjp-pl-957"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -27,11 +28,16 @@
                         <constraint firstAttribute="height" id="SOb-T6-tpp"/>
                     </constraints>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUv-fs-pdE">
+                    <rect key="frame" x="28" y="62" width="30" height="30"/>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6dv-NJ-0h2" secondAttribute="trailing" id="Hro-0G-8Jq"/>
+                <constraint firstItem="RUv-fs-pdE" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="18" id="NpC-di-yMq"/>
+                <constraint firstItem="RUv-fs-pdE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="28" id="Uky-6M-vWT"/>
                 <constraint firstItem="6dv-NJ-0h2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Xo3-qT-SuU"/>
                 <constraint firstItem="6dv-NJ-0h2" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="fnA-Hb-44C"/>
             </constraints>

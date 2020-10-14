@@ -61,6 +61,7 @@ class PhotosStreamViewController: UITableViewController {
   
   private func showPhotoDetailView(at index: Int) {
     guard let photoDetailViewController = viewModel.photoDetailView(at: index) else { return }
+    photoDetailViewController.modalPresentationStyle = .overFullScreen
     present(photoDetailViewController, animated: true, completion: nil)
   }
 
