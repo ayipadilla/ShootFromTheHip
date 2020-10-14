@@ -128,18 +128,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="135"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ICONS" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6v-8V-IXu">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CREDITS" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6v-8V-IXu">
                                                     <rect key="frame" x="20" y="20" width="374" height="18"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
                                                     <color key="textColor" name="SecondaryTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Icon Credits" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="H15-n9-C9F">
-                                                    <rect key="frame" x="14" y="38" width="380" height="35"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Credits" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="H15-n9-C9F">
+                                                    <rect key="frame" x="14" y="38" width="380" height="80"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="tintColor" name="AccentColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="35" id="JWc-1G-0Mn"/>
+                                                        <constraint firstAttribute="height" constant="80" id="JWc-1G-0Mn"/>
                                                     </constraints>
                                                     <color key="textColor" systemColor="labelColor"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
@@ -172,7 +172,7 @@
                         <outlet property="appNameLabel" destination="4fp-wx-Pex" id="gUV-UX-NkR"/>
                         <outlet property="appVersionLabel" destination="3Ff-aQ-n8z" id="Lyi-Tg-Hlv"/>
                         <outlet property="closeButton" destination="STA-AM-kef" id="Uf6-vT-xNf"/>
-                        <outlet property="iconCreditsTextView" destination="H15-n9-C9F" id="1XV-mh-vAm"/>
+                        <outlet property="creditsTextView" destination="H15-n9-C9F" id="gYw-0A-MWA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ouj-5y-dRK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

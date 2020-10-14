@@ -26,7 +26,9 @@ class AboutViewModel {
   
   var iconCredits: String {
     let icons = [
-      "Ionicons https://ionicons.com/", "Unicons https://iconscout.com/unicons"]
+      "Ionicons https://ionicons.com/",
+      "Unsplash https://unsplash.com/"
+    ]
     let text = icons.joined(separator: "\n")
     return text
   }

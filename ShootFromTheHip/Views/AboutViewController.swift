@@ -15,7 +15,7 @@ class AboutViewController: UITableViewController {
   @IBOutlet private weak var closeButton: UIBarButtonItem!
   @IBOutlet private weak var appNameLabel: UILabel!
   @IBOutlet private weak var appVersionLabel: UILabel!
-  @IBOutlet weak var iconCreditsTextView: UITextView!
+  @IBOutlet weak var creditsTextView: UITextView!
   
   private let viewModel = AboutViewModel()
   
@@ -26,19 +26,19 @@ class AboutViewController: UITableViewController {
   }
   
   private func setupView() {
+    creditsTextView.delegate = self
+
     closeButton.target = self
     closeButton.action = #selector(closeView(_:))
     
     navigationController?.navigationBar.shadowImage = UIImage()
     tableView.tableFooterView = UIView()
-    
-    iconCreditsTextView.delegate = self
   }
   
   private func setupContent() {
     appNameLabel.text = viewModel.appDisplayName
     appVersionLabel.text = viewModel.appVersion
-    iconCreditsTextView.text = viewModel.iconCredits
+    creditsTextView.text = viewModel.iconCredits
   }
   
   @objc private func closeView(_ sender: Any) {
