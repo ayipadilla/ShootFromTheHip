@@ -7,12 +7,17 @@
 
 import UIKit
 import Combine
+import QuickLook
+import SDWebImage
 
 class PhotosStreamViewController: UIViewController {
   
   @IBOutlet private weak var tableView: UITableView!
   @IBOutlet private weak var infoButton: UIBarButtonItem!
   private var refreshControl = UIRefreshControl()
+  
+  private var someURL: URL?
+  
   
   private let viewModel: PhotosStreamViewModel = PhotosStreamViewModel()
   private var subscriptions: Set<AnyCancellable> = []
@@ -24,6 +29,21 @@ class PhotosStreamViewController: UIViewController {
     setupViews()
     setupBindings()
     viewModel.refresh()
+    
+    let imageURL = URL(string:"https://avatars2.githubusercontent.com/u/1173738?s=460&u=d2d3a2ff0db5400f861d292a195b39ebc9fb5909&v=4")
+    let manager = SDWebImageManager.shared
+    manager.loadImage(with: imageURL,
+                      options: .progressiveLoad) { (receivedSize, expectedSize, url) in
+      
+    } completed: { [weak self] (image, data, error, cacheType, finished, imageUrll) in
+      guard let self = self else { return }
+      if finished {
+        let imagePath = SDImageCache.shared.cachePath(forKey: imageUrll?.absoluteString) ?? ""
+        print(imagePath)
+      }
+      self.someURL = imageUrll
+    }
+    
   }
   
   private func setupViews() {
@@ -59,6 +79,14 @@ class PhotosStreamViewController: UIViewController {
     guard let aboutViewController = storyboard?.instantiateViewController(identifier: AboutViewController.storyboardIdentifier) else { return }
     present(aboutViewController, animated: true, completion: nil)
   }
+  
+  private func showPhoto(at index: Int) {
+    
+    let quickLookViewController = QLPreviewController()
+    quickLookViewController.dataSource = self
+    quickLookViewController.currentPreviewItemIndex = index
+    present(quickLookViewController, animated: true)
+  }
 }
 
 extension PhotosStreamViewController: UITableViewDataSource {
@@ -88,6 +116,11 @@ extension PhotosStreamViewController: UITableViewDataSource {
 }
 
 extension PhotosStreamViewController: UITableViewDelegate {
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    showPhoto(at: indexPath.row)
+  }
+
   func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
     // Fetch more items when last cell is about to be displayed
     let index = indexPath.row
@@ -95,4 +128,30 @@ extension PhotosStreamViewController: UITableViewDelegate {
       viewModel.fetchPhotos()
     }
   }
+}
+
+extension PhotosStreamViewController: QLPreviewControllerDataSource {
+  func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
+    1
+    }
+
+    func previewController(
+      _ controller: QLPreviewController,
+      previewItemAt index: Int
+    ) -> QLPreviewItem {
+      let cellData = viewModel.photoStream.first!
+      let imagePath = SDImageCache.shared.cachePath(forKey: cellData.imageURL?.absoluteString) ?? ""
+      let impt = SDImageCache.shared.cachePath(forKey: cellData.imageURL?.absoluteString)
+      let imagePath2 = cellData.imageURL?.absoluteString ?? ""
+//      let url = NSURL(string: imagePath ?? "")!
+      
+      let downloader = SDWebImageDownloader.shared
+      downloader.downloadImage(with: cellData.imageURL) { (image, data, error, finished) in
+        
+      }
+      
+      let filePath = "file://\(imagePath)"
+      let url = NSURL(string: filePath)
+     return url!
+    }
 }
