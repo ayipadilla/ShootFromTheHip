@@ -1,4 +1,4 @@
-# ShootFromTheHip
+# Shoot From The Hip
 
 Hip Shot - photo viewer app
 
