@@ -35,6 +35,7 @@
 		F33A500925373C0300566457 /* PhotoStreamData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33A500825373C0300566457 /* PhotoStreamData.swift */; };
 		F33A501C2537965B00566457 /* AboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33A501B2537965B00566457 /* AboutViewModel.swift */; };
 		F33A50222537A10D00566457 /* UserDefaultsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33A50212537A10D00566457 /* UserDefaultsUtils.swift */; };
+		F37EB91A2537C0350073811D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F37EB9192537C0350073811D /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		F33A501B2537965B00566457 /* AboutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewModel.swift; sourceTree = "<group>"; };
 		F33A50212537A10D00566457 /* UserDefaultsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtils.swift; sourceTree = "<group>"; };
 		F33D602E3221F721115C31D7 /* Pods-ShootFromTheHip-ShootFromTheHipUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShootFromTheHip-ShootFromTheHipUITests.release.xcconfig"; path = "Target Support Files/Pods-ShootFromTheHip-ShootFromTheHipUITests/Pods-ShootFromTheHip-ShootFromTheHipUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F37EB9192537C0350073811D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 		F329CD362534F97D00060E0B = {
 			isa = PBXGroup;
 			children = (
+				F37EB9192537C0350073811D /* README.md */,
 				F329CD412534F97D00060E0B /* ShootFromTheHip */,
 				F329CD582534F97D00060E0B /* ShootFromTheHipTests */,
 				F329CD632534F97D00060E0B /* ShootFromTheHipUITests */,
@@ -359,6 +362,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F37EB91A2537C0350073811D /* README.md in Resources */,
 				F33A4FE625368DD100566457 /* PhotoDetailViewController.xib in Resources */,
 				F329CD4F2534F97D00060E0B /* LaunchScreen.storyboard in Resources */,
 				F329CD4C2534F97D00060E0B /* Assets.xcassets in Resources */,
