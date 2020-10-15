@@ -39,9 +39,8 @@
                     <rect key="frame" x="28" y="62" width="17.5" height="22"/>
                     <state key="normal" image="xmark" catalog="system"/>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Photo by" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71j-fd-WXX">
-                    <rect key="frame" x="20" y="841" width="374" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo by" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71j-fd-WXX">
+                    <rect key="frame" x="20" y="818.5" width="374" height="23.5"/>
                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -50,11 +49,14 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="71j-fd-WXX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="0ng-V7-ldi"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="71j-fd-WXX" secondAttribute="bottom" constant="20" id="AVR-wa-rLA"/>
                 <constraint firstItem="mJP-bc-RE3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="18" id="GuT-Dx-06i"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6dv-NJ-0h2" secondAttribute="trailing" id="Hro-0G-8Jq"/>
                 <constraint firstItem="RUv-fs-pdE" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="18" id="NpC-di-yMq"/>
                 <constraint firstItem="6dv-NJ-0h2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Xo3-qT-SuU"/>
                 <constraint firstItem="6dv-NJ-0h2" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="fnA-Hb-44C"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="71j-fd-WXX" secondAttribute="trailing" constant="20" id="lbQ-t7-vqT"/>
                 <constraint firstItem="RUv-fs-pdE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="28" id="naJ-QT-3A4"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mJP-bc-RE3" secondAttribute="trailing" constant="28" id="vjk-QK-HpI"/>
             </constraints>

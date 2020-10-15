@@ -8,7 +8,7 @@
 import Foundation
 
 struct PhotoStreamData {
-  let heading: String
+  let username: String
   let previewImageURL: URL?
   let fullImageURL: URL?
   let heightWidthRatio: Double

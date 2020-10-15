@@ -38,7 +38,7 @@ class PhotosStreamViewModel {
         let fullImageURL = URL(string: photo.image.raw)
         let heightWidthRatio = Double(photo.height) / Double(photo.width)
         return PhotoStreamData(
-          heading: photo.user.name ?? "",
+          username: photo.user.name ?? "",
           previewImageURL: previewImageURL,
           fullImageURL: fullImageURL,
           heightWidthRatio: heightWidthRatio
@@ -64,6 +64,7 @@ class PhotosStreamViewModel {
     viewModel.previewImageURL = cellData.previewImageURL
     viewModel.photoImageURL = cellData.fullImageURL
     viewModel.heightWidthRatio = cellData.heightWidthRatio
+    viewModel.username = cellData.username
     return photoDetailViewCOntroller
   }
 }
