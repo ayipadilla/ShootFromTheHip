@@ -16,4 +16,8 @@ struct UnsplashAPI {
   static let authorizationPrefix = "Client-ID "
   static let authorizationKey = "Authorization"
   static let acceptVersionKey = "Accept-Version"
+  
+  static let requestParamOrderBy = "order_by"
+  static let requestParamPage = "page"
+  static let requestParamPageSize = "per_page"
 }

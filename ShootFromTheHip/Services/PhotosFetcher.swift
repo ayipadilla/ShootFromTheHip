@@ -33,6 +33,12 @@ class PhotosFetcher: PhotosFetchable {
   private var dataTask: URLSessionDataTask?
   
   static let pageSize = 10
+  
+  enum SortType: String {
+    case latest = "latest"
+    case oldest = "oldest"
+    case popular = "popular"
+  }
 
   func fetchPhotos(page: Int = 1, pageSize: Int = pageSize, completion: @escaping ([Photo]?, Int?, Error?) -> Void) {
     dataTask?.cancel()
@@ -78,9 +84,12 @@ class PhotosFetcher: PhotosFetchable {
     components.path = "/photos"
     
     components.queryItems = [
-      URLQueryItem(name: "order_by", value: "latest"),
-      URLQueryItem(name: "page", value: String(page)),
-      URLQueryItem(name: "per_page", value: String(pageSize))
+      URLQueryItem(name: UnsplashAPI.requestParamOrderBy,
+                   value: SortType.latest.rawValue),
+      URLQueryItem(name: UnsplashAPI.requestParamPage,
+                   value: String(page)),
+      URLQueryItem(name: UnsplashAPI.requestParamPageSize,
+                   value: String(pageSize))
     ]
     
     return components

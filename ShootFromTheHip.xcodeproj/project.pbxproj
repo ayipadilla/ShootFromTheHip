@@ -29,6 +29,13 @@
 		F32CFCCA253638950042CBB0 /* PhotosStreamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32CFCC8253638950042CBB0 /* PhotosStreamCell.swift */; };
 		F32CFCCB253638950042CBB0 /* PhotosStreamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F32CFCC9253638950042CBB0 /* PhotosStreamCell.xib */; };
 		F33A4FD62536591600566457 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33A4FD52536591600566457 /* AboutViewController.swift */; };
+		F33A4FE525368DD100566457 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33A4FE325368DD100566457 /* PhotoDetailViewController.swift */; };
+		F33A4FE625368DD100566457 /* PhotoDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F33A4FE425368DD100566457 /* PhotoDetailViewController.xib */; };
+		F33A4FEB2536D2F000566457 /* PhotoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33A4FEA2536D2F000566457 /* PhotoDetailViewModel.swift */; };
+		F33A500925373C0300566457 /* PhotoStreamData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33A500825373C0300566457 /* PhotoStreamData.swift */; };
+		F33A501C2537965B00566457 /* AboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33A501B2537965B00566457 /* AboutViewModel.swift */; };
+		F33A50222537A10D00566457 /* UserDefaultsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33A50212537A10D00566457 /* UserDefaultsUtils.swift */; };
+		F37EB91A2537C0350073811D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F37EB9192537C0350073811D /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,7 +89,14 @@
 		F32CFCC8253638950042CBB0 /* PhotosStreamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosStreamCell.swift; sourceTree = "<group>"; };
 		F32CFCC9253638950042CBB0 /* PhotosStreamCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosStreamCell.xib; sourceTree = "<group>"; };
 		F33A4FD52536591600566457 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		F33A4FE325368DD100566457 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		F33A4FE425368DD100566457 /* PhotoDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoDetailViewController.xib; sourceTree = "<group>"; };
+		F33A4FEA2536D2F000566457 /* PhotoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewModel.swift; sourceTree = "<group>"; };
+		F33A500825373C0300566457 /* PhotoStreamData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStreamData.swift; sourceTree = "<group>"; };
+		F33A501B2537965B00566457 /* AboutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewModel.swift; sourceTree = "<group>"; };
+		F33A50212537A10D00566457 /* UserDefaultsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtils.swift; sourceTree = "<group>"; };
 		F33D602E3221F721115C31D7 /* Pods-ShootFromTheHip-ShootFromTheHipUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShootFromTheHip-ShootFromTheHipUITests.release.xcconfig"; path = "Target Support Files/Pods-ShootFromTheHip-ShootFromTheHipUITests/Pods-ShootFromTheHip-ShootFromTheHipUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F37EB9192537C0350073811D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +143,7 @@
 		F329CD362534F97D00060E0B = {
 			isa = PBXGroup;
 			children = (
+				F37EB9192537C0350073811D /* README.md */,
 				F329CD412534F97D00060E0B /* ShootFromTheHip */,
 				F329CD582534F97D00060E0B /* ShootFromTheHipTests */,
 				F329CD632534F97D00060E0B /* ShootFromTheHipUITests */,
@@ -156,6 +171,7 @@
 				F32CFCBC253635A90042CBB0 /* Views */,
 				F32CFC97253501CC0042CBB0 /* Services */,
 				F32CFC96253501AA0042CBB0 /* Models */,
+				F33A50202537A0F200566457 /* Utilities */,
 				F329CD482534F97D00060E0B /* Main.storyboard */,
 				F329CD4D2534F97D00060E0B /* LaunchScreen.storyboard */,
 				F329CD4B2534F97D00060E0B /* Assets.xcassets */,
@@ -190,6 +206,7 @@
 				F32CFCAD253622200042CBB0 /* ProfileImage.swift */,
 				F32CFCA3253620D60042CBB0 /* User.swift */,
 				F32CFCA8253621720042CBB0 /* Topic.swift */,
+				F33A500825373C0300566457 /* PhotoStreamData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -210,9 +227,21 @@
 				F32CFCC32536363B0042CBB0 /* PhotosStreamViewModel.swift */,
 				F32CFCC8253638950042CBB0 /* PhotosStreamCell.swift */,
 				F32CFCC9253638950042CBB0 /* PhotosStreamCell.xib */,
+				F33A4FE325368DD100566457 /* PhotoDetailViewController.swift */,
+				F33A4FEA2536D2F000566457 /* PhotoDetailViewModel.swift */,
+				F33A4FE425368DD100566457 /* PhotoDetailViewController.xib */,
 				F33A4FD52536591600566457 /* AboutViewController.swift */,
+				F33A501B2537965B00566457 /* AboutViewModel.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F33A50202537A0F200566457 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F33A50212537A10D00566457 /* UserDefaultsUtils.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		FCB69CCB514A31A2A72C1309 /* Frameworks */ = {
@@ -333,6 +362,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F37EB91A2537C0350073811D /* README.md in Resources */,
+				F33A4FE625368DD100566457 /* PhotoDetailViewController.xib in Resources */,
 				F329CD4F2534F97D00060E0B /* LaunchScreen.storyboard in Resources */,
 				F329CD4C2534F97D00060E0B /* Assets.xcassets in Resources */,
 				F32CFCCB253638950042CBB0 /* PhotosStreamCell.xib in Resources */,
@@ -464,7 +495,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F33A500925373C0300566457 /* PhotoStreamData.swift in Sources */,
 				F32CFC99253503F50042CBB0 /* Photo.swift in Sources */,
+				F33A501C2537965B00566457 /* AboutViewModel.swift in Sources */,
 				F32CFCB3253622F30042CBB0 /* UnsplashAPI.swift in Sources */,
 				F32CFCAE253622200042CBB0 /* ProfileImage.swift in Sources */,
 				F329CD472534F97D00060E0B /* PhotosStreamViewController.swift in Sources */,
@@ -473,7 +506,10 @@
 				F32CFCA4253620D60042CBB0 /* User.swift in Sources */,
 				F329CD432534F97D00060E0B /* AppDelegate.swift in Sources */,
 				F32CFC9F253504630042CBB0 /* PhotoImage.swift in Sources */,
+				F33A4FEB2536D2F000566457 /* PhotoDetailViewModel.swift in Sources */,
 				F329CD452534F97D00060E0B /* SceneDelegate.swift in Sources */,
+				F33A4FE525368DD100566457 /* PhotoDetailViewController.swift in Sources */,
+				F33A50222537A10D00566457 /* UserDefaultsUtils.swift in Sources */,
 				F32CFCCA253638950042CBB0 /* PhotosStreamCell.swift in Sources */,
 				F33A4FD62536591600566457 /* AboutViewController.swift in Sources */,
 				F32CFCA9253621720042CBB0 /* Topic.swift in Sources */,

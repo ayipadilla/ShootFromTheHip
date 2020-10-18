@@ -13,8 +13,9 @@ class PhotosStreamViewModel {
   private var page = 1
   private var pageSize = 10
 
-  @Published var photoStream: [PhotoStreamCellData] = []
-  
+  @Published var photoStream: [PhotoStreamData] = []
+  private var photos: [Photo] = []
+
   init(photosFetcher: PhotosFetchable = PhotosFetcher()) {
     self.photosFetcher = photosFetcher
   }
@@ -32,12 +33,14 @@ class PhotosStreamViewModel {
       else { return }
 
       self.page = nextPage
-      let photosData = photos.map { (photo) -> PhotoStreamCellData in
-        let imageURL = URL(string: photo.image.small)
-        let heightWidthRatio = Double(photo.width) / Double(photo.height)
-        return PhotoStreamCellData(
-          heading: photo.user.name ?? "",
-          imageURL: imageURL,
+      let photosData = photos.map { (photo) -> PhotoStreamData in
+        let previewImageURL = URL(string: photo.image.regular)
+        let fullImageURL = URL(string: photo.image.raw)
+        let heightWidthRatio = Double(photo.height) / Double(photo.width)
+        return PhotoStreamData(
+          username: photo.user.name ?? "",
+          previewImageURL: previewImageURL,
+          fullImageURL: fullImageURL,
           heightWidthRatio: heightWidthRatio
         )
       }
@@ -45,9 +48,23 @@ class PhotosStreamViewModel {
       
       if self.page == 1 {
         self.photoStream = photosData
+        self.photos = photos
       } else {
         self.photoStream.append(contentsOf: photosData)
+        self.photos.append(contentsOf: photos)
       }
     }
+  }
+
+  func photoDetailView(at index: Int) -> PhotoDetailViewController? {
+    guard index >= 0, index < photos.count else { return nil }
+    let photoDetailViewCOntroller = PhotoDetailViewController(nibName: PhotoDetailViewController.nibName, bundle: nil)
+    let cellData = photoStream[index]
+    let viewModel = photoDetailViewCOntroller.viewModel
+    viewModel.previewImageURL = cellData.previewImageURL
+    viewModel.photoImageURL = cellData.fullImageURL
+    viewModel.heightWidthRatio = cellData.heightWidthRatio
+    viewModel.username = cellData.username
+    return photoDetailViewCOntroller
   }
 }

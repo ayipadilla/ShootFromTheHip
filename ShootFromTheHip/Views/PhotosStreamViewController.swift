@@ -10,11 +10,9 @@ import Combine
 import QuickLook
 import SDWebImage
 
-class PhotosStreamViewController: UIViewController {
+class PhotosStreamViewController: UITableViewController {
   
-  @IBOutlet private weak var tableView: UITableView!
   @IBOutlet private weak var infoButton: UIBarButtonItem!
-  private var refreshControl = UIRefreshControl()
   
   private var someURL: URL?
   
@@ -47,12 +45,15 @@ class PhotosStreamViewController: UIViewController {
   }
   
   private func setupViews() {
+    extendedLayoutIncludesOpaqueBars = true
+
     tableView.delegate = self
     tableView.dataSource = self
     tableView.register(UINib(nibName: PhotosStreamCell.cellIdentifier, bundle: nil), forCellReuseIdentifier: PhotosStreamCell.cellIdentifier)
     
-    refreshControl.addTarget(self, action: #selector(refreshPhotosStream(_:)), for: .valueChanged)
-    tableView.addSubview(refreshControl)
+    refreshControl = UIRefreshControl()
+    refreshControl?.addTarget(self, action: #selector(refreshPhotosStream(_:)), for: .valueChanged)
+    tableView.refreshControl = refreshControl
     
     infoButton.target = self
     infoButton.action = #selector(showAboutView(_:))
@@ -62,9 +63,7 @@ class PhotosStreamViewController: UIViewController {
     viewModel.$photoStream.sink { [weak self] (_) in
       guard let self = self else { return }
       DispatchQueue.main.async {
-        if self.refreshControl.isRefreshing {
-          self.refreshControl.endRefreshing()
-        }
+        self.refreshControl?.endRefreshing()
         self.tableView.reloadData()
       }
     }.store(in: &subscriptions)
@@ -76,7 +75,7 @@ class PhotosStreamViewController: UIViewController {
   
   // MARK: Navigation
   @objc private func showAboutView(_ sender: Any) {
-    guard let aboutViewController = storyboard?.instantiateViewController(identifier: AboutViewController.storyboardIdentifier) else { return }
+    guard let aboutViewController = storyboard?.instantiateViewController(identifier:AboutViewController.navControllerStoryboardIdentifier) else { return }
     present(aboutViewController, animated: true, completion: nil)
   }
   
@@ -87,14 +86,19 @@ class PhotosStreamViewController: UIViewController {
     quickLookViewController.currentPreviewItemIndex = index
     present(quickLookViewController, animated: true)
   }
-}
+  private func showPhotoDetailView(at index: Int) {
+    guard let photoDetailViewController = viewModel.photoDetailView(at: index) else { return }
+    photoDetailViewController.modalPresentationStyle = .overFullScreen
+    photoDetailViewController.modalTransitionStyle = .crossDissolve
+    present(photoDetailViewController, animated: true, completion: nil)
+  }
 
-extension PhotosStreamViewController: UITableViewDataSource {
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  // MARK: UITableViewDataSource
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return viewModel.photoStream.count
   }
   
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: PhotosStreamCell.cellIdentifier, for: indexPath)
     let index = indexPath.row
     guard index < viewModel.photoStream.count,
@@ -107,26 +111,24 @@ extension PhotosStreamViewController: UITableViewDataSource {
     return cell
   }
   
-  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     let index = indexPath.row
     guard index < viewModel.photoStream.count else { return 0 }
     let cellData = viewModel.photoStream[index]
     return tableView.frame.size.width * CGFloat(cellData.heightWidthRatio)
   }
-}
 
-extension PhotosStreamViewController: UITableViewDelegate {
-  
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    showPhoto(at: indexPath.row)
-  }
-
-  func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+  // MARK: UITableViewDelegate
+  override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
     // Fetch more items when last cell is about to be displayed
     let index = indexPath.row
     if index == viewModel.photoStream.count - 1 {
       viewModel.fetchPhotos()
     }
+  }
+  
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    showPhotoDetailView(at: indexPath.row)
   }
 }
 
